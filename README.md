@@ -1,1 +1,2 @@
-DC34, Cloud Village, BSLV attendees: cloudbasher will be made public on Aug 10 or shortly afterwards. Stay tuned.
+SECTOR, DC34, Cloud Village attendees: cloudbasher will be released on October 9. 
+Thank you for your patience.
