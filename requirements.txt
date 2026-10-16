@@ -1,0 +1,149 @@
+# Generated from uv.lock by the project's release tooling -- DO NOT EDIT BY HAND.
+# Runtime dependencies for all three cloud providers (each pulls in the browser
+# extra for console/SSO login). Regenerated after any change to pyproject.toml or
+# uv.lock, and checked for drift on every export, so it cannot fall behind.
+#
+# After installing, console/SSO credentials also need the browser build itself:
+#     playwright install chromium
+# pip cannot fetch that -- it is not a Python package.
+#
+#    uv export --frozen --format requirements-txt --no-hashes --no-emit-project --no-dev --extra aws --extra gcp --extra azure
+bcrypt==5.0.0
+    # via paramiko
+boto3==1.43.6
+    # via cloudbasher
+botocore==1.43.6
+    # via
+    #   boto3
+    #   cloudbasher
+    #   s3transfer
+certifi==2026.4.22
+    # via requests
+cffi==2.0.0 ; platform_python_implementation != 'PyPy'
+    # via
+    #   cryptography
+    #   pynacl
+charset-normalizer==3.4.7
+    # via requests
+cryptography==50.0.0
+    # via
+    #   google-auth
+    #   msal
+    #   paramiko
+    #   pyjwt
+google-api-core==2.30.3
+    # via
+    #   google-cloud-compute
+    #   google-cloud-core
+google-auth==2.52.0
+    # via
+    #   google-api-core
+    #   google-cloud-compute
+    #   google-cloud-core
+google-cloud-compute==1.47.0
+    # via cloudbasher
+google-cloud-core==2.6.0
+    # via cloudbasher
+googleapis-common-protos==1.75.0
+    # via
+    #   google-api-core
+    #   grpcio-status
+greenlet==3.5.4
+    # via playwright
+grpcio==1.80.0
+    # via
+    #   google-api-core
+    #   google-cloud-compute
+    #   grpcio-status
+grpcio-status==1.80.0
+    # via google-api-core
+idna==3.18
+    # via requests
+invoke==3.0.3
+    # via paramiko
+jmespath==1.1.0
+    # via
+    #   boto3
+    #   botocore
+linkify-it-py==2.1.0
+    # via markdown-it-py
+markdown-it-py==4.2.0
+    # via
+    #   mdit-py-plugins
+    #   rich
+    #   textual
+mdit-py-plugins==0.6.0
+    # via textual
+mdurl==0.1.2
+    # via markdown-it-py
+msal==1.37.0
+    # via cloudbasher
+paramiko==5.0.0
+    # via cloudbasher
+platformdirs==4.9.6
+    # via textual
+playwright==1.62.0
+    # via cloudbasher
+proto-plus==1.28.0
+    # via
+    #   google-api-core
+    #   google-cloud-compute
+protobuf==6.33.6
+    # via
+    #   google-api-core
+    #   google-cloud-compute
+    #   googleapis-common-protos
+    #   grpcio-status
+    #   proto-plus
+pyasn1==0.6.4
+    # via pyasn1-modules
+pyasn1-modules==0.4.2
+    # via google-auth
+pycparser==3.0 ; implementation_name != 'PyPy' and platform_python_implementation != 'PyPy'
+    # via cffi
+pyee==13.0.1
+    # via playwright
+pygments==2.20.0
+    # via
+    #   rich
+    #   textual
+pyjwt==2.13.0
+    # via msal
+pynacl==1.6.2
+    # via paramiko
+pyte==0.8.2
+    # via cloudbasher
+python-dateutil==2.9.0.post0
+    # via botocore
+pyyaml==6.0.3
+    # via cloudbasher
+requests==2.33.1
+    # via
+    #   cloudbasher
+    #   google-api-core
+    #   msal
+rich==15.0.0
+    # via
+    #   cloudbasher
+    #   textual
+s3transfer==0.17.0
+    # via boto3
+six==1.17.0
+    # via python-dateutil
+textual==8.2.5
+    # via cloudbasher
+typing-extensions==4.15.0
+    # via
+    #   grpcio
+    #   pyee
+    #   textual
+uc-micro-py==2.0.0
+    # via linkify-it-py
+urllib3==2.7.0
+    # via
+    #   botocore
+    #   requests
+wcwidth==0.7.0
+    # via pyte
+websocket-client==1.9.0
+    # via cloudbasher

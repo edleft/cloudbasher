@@ -1,0 +1,161 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloudbasher"
+version = "0.9.0"
+description = "Multi-cloud CloudShell automation framework (CloudBasher)"
+readme = "README.md"
+# NOT MIT. CloudBasher is source-available under the CloudBasher Research
+# Source License (see LICENSE) -- not an OSI-approved license. The
+# classifier below is what stops packaging tools and mirrors from
+# presenting this as open source.
+license = {text = "CloudBasher Research Source License 1.0"}
+classifiers = [
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+]
+# A real holder, not a collective placeholder: this is what PyPI and every
+# packaging mirror display, and "CloudBasher Contributors" named no legal
+# person. The address is the project's licensing contact (LICENSE section 21),
+# deliberately the same one the LICENSE and NOTICE carry.
+authors = [
+    {name = "edleft", email = "cloudbasher@edleft.org"}
+]
+requires-python = ">=3.11"
+# Both TUI backends are first-class core (non-optional) dependencies for
+# the dual-boot architecture — neither lives in an extras group. The CLI
+# flag --tui-be selects between them at runtime (aliases: txt/textual,
+# ptk/prompt_toolkit). The CLI-effective default is `textual` (see
+# cli/main.py's --tui-be default). `prompt_toolkit` is kept as a
+# core-dependency legacy fallback, selectable via --tui-be ptk.
+#
+# pyte: VT100/VT220 state machine. Backs the TerminalPane widget, which
+# replaces the Input + RichLog split with a single terminal-grid widget.
+# That is what gives the REPL a real-terminal feel and makes running
+# vi/htop on the remote CloudShell container possible.
+dependencies = [
+    # `prompt_toolkit` was here for the legacy TUI backend only, and it was a
+    # REQUIRED dependency of every install for a backend `--help` already
+    # called legacy. Deleted with it.
+    "textual>=0.79.0",
+    "rich>=13.0.0",
+    "pyte>=0.8.0",
+    "paramiko>=5.0.0,<6",
+    "requests>=2.28.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-asyncio>=0.21",
+    # SVG snapshot regression tests — catches "tests pass but visible
+    # behavior didn't change" failures that plain pilot.press tests miss.
+    "pytest-textual-snapshot>=0.4",
+    # PINNED, not a range. An open range let the tree be
+    # formatted by one black and checked by another: `uv.lock` resolved to
+    # 26.3.1 while the committed tree had been formatted by something older,
+    # so the documented `black src/ tests/ scripts/` rewrote 248 of 334 files.
+    # `uv sync` was consistent; `pip install -e .[dev]` was not, and that is
+    # the path the project documentation names as the fallback. Bump
+    # deliberately, in its own commit, together with a reformat -- never
+    # incidentally.
+    "black==26.3.1",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+]
+
+# Browser-driven console/SSO login. Required by AWS (csp/aws/playwright_login.py,
+# browser.py, console_bootstrap.py) and GCP (csp/gcp/playwright_login.py) whenever
+# the -F file holds a console username/password or an SSO start URL — the shape
+# auto-detection in cli/main.py selects that path with no flag to opt out of, so
+# for those credentials this is a hard requirement, not an enhancement.
+#
+# Installing the package is only half of it: Playwright also needs its matching
+# browser build, which pip/uv cannot fetch. After syncing, run
+#   venv/bin/playwright install chromium
+# Use the venv's own CLI — a globally-installed playwright pins a different
+# browser revision and leaves this one unsatisfied. Symptom when missing:
+# "BrowserType.launch: Executable doesn't exist at .../chromium-<rev>/...".
+#
+# Azure is deliberately NOT listed: its console-credential path is unimplemented
+# (csp/azure/credentials.py raises CredentialError for AzureConsoleCreds), so it
+# has no Playwright dependency to declare yet.
+browser = [
+    "playwright>=1.40",
+]
+
+aws = [
+    "boto3>=1.26",
+    "botocore>=1.29",
+    "websocket-client>=1.6",
+    "cloudbasher[browser]",
+]
+
+gcp = [
+    "google-cloud-core>=2.3",
+    "google-cloud-compute>=1.10",
+    "cloudbasher[browser]",
+]
+
+azure = [
+    "websocket-client>=1.6",
+    "msal>=1.20.0",
+]
+
+all = [
+    "cloudbasher[dev,aws,gcp,azure]",
+]
+
+[project.scripts]
+cloudbasher = "cloudbasher.cli:main"
+cb = "cloudbasher.cli:main"
+# The `cloudshell-runner` and `csr` aliases were dropped at v0.2.0 rather than at
+# the v0.3.0 they were scheduled for. A deprecation period exists to protect
+# people who already type the old name; this repository has never been published,
+# so outside it there is nobody to protect -- and the old name carries a project
+# identity the public repository has never had, which is a paragraph of
+# explanation for zero benefit.
+
+# Packages are DISCOVERED, not enumerated. An explicit
+# `packages = ["cloudbasher", "cloudshell_runner"]` breaks any checkout that
+# does not contain both -- setuptools fails outright with "package directory
+# does not exist" rather than skipping the absent one. Discovery makes the
+# manifest a function of what is actually present.
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-v"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+markers = [
+    "integration: requires live cloud credentials (pass --test to enable)",
+    "slow: test takes more than a few seconds",
+    "real_hidden_tabs: see the real pinnable_tabs.HIDDEN_TABS instead of the un-hiding autouse fixture",
+]
