@@ -1,0 +1,138 @@
+# cloudbasher.rc — optional application settings.
+# Copy to ~/.cloudbasher.rc or ./cloudbasher.rc. Set CLOUDBASHER_RC to use
+# another file. Command-line -o section.key=value overrides file settings.
+# Lines beginning with # are comments; use ':' or '=' between key and value.
+
+[ui]
+# TUI title and command prompt. Defaults: built-in title and 'cb>'.
+# title : 'CloudBasher'
+# prompt : 'cb>'
+# CSP label case: uppercase|lowercase. Default: uppercase.
+# csp_case : 'uppercase'
+# GCP label colors: multicolor|monocolor. Default: multicolor.
+# csp_color : 'multicolor'
+# Maximum retained lines per log tab. Default: 5000.
+# log_buffer_lines : 5000
+# Use nested node rows. Default: true.
+# node_subtable : true
+
+[redact]
+# Mask account and identity-shaped values in the TUI and command output.
+# Defaults: disabled; mode partial. Secret masking is always enabled.
+# enabled : false
+# mode : 'partial'                 # partial|pseudonym
+# Per-field overrides: off|partial|pseudonym. Unset fields use mode.
+# field.account : 'partial'
+# field.identity : 'pseudonym'
+# field.username : 'partial'
+# field.rolename : 'partial'
+# field.object_id : 'partial'
+# field.secret : 'partial'
+# field.ip : 'partial'
+# field.hostname : 'partial'
+# Optional custom match rules use pattern, mode, and optional scope
+# (field:<field-name> or text). Rules are evaluated in file order.
+# rule.example.pattern : '^example-'
+# rule.example.mode : 'pseudonym'
+# rule.example.scope : 'field:identity'
+
+[net]
+# Proxy for API and WebSocket connections. Default: unset.
+# proxy : 'http://127.0.0.1:8080'
+# Disable TLS verification. Default: false; use only for trusted debugging.
+# proxy_insecure : false
+# Log WebSocket frame previews. May include sensitive shell output. Default: false.
+# frame_trace : false
+# Console sign-in gate timeout, seconds. Default: 165; 0 disables the bound.
+# login_gate_timeout : 165
+# CloudShell environment startup timeout, seconds. Default: 60.
+# env_wait_timeout : 60
+# HTTP and WebSocket operation timeouts, seconds. Defaults: 30 and 60.
+# http_timeout : 30
+# ws_timeout : 60
+
+[session]
+# Connect restored nodes automatically at startup. Default: false.
+# auto_connect : false
+
+[diag]
+# Collect network lookup diagnostics. Default: false.
+# net_trace : false
+# Diagnostic report path. Default: net_trace_report.txt in the current directory.
+# net_trace_path : 'net_trace_report.txt'
+# Number of failed lookups to inspect when diagnostics are enabled. Default: 3.
+# net_bisect : 3
+
+[performance]
+# Maximum open files requested at startup. Default: 65536; 0 disables adjustment.
+# max_open_files : 65536
+# Concurrent workers for multi-node operations. Default: 16.
+# max_workers : 16
+# When to probe node IP/hostname: eager|deferred. Default: eager.
+# prompt_probe_mode : 'eager'
+# Minimum seconds between node table refreshes. Default: 0.5; 0 disables limit.
+# node_refresh_min_interval_seconds : 0.5
+# Resume following new log output after scrolling away. Default: 30 seconds.
+# log_follow_repin_seconds : 30.0
+# Collapse repeated log-pane messages for this many seconds. Default: 5; 0 disables.
+# log_repeat_window_seconds : 5.0
+# Rows above the active provisioning frontier. Default: 3; 0 disables following.
+# node_follow_frontier_rows : 3
+# Resume node-pane following after manual scroll. Default: 30 seconds.
+# node_follow_repin_seconds : 30.0
+# Environment status polling cadence and transition estimates, seconds.
+# Defaults: 1.1, 6.0, and 13.4.
+# env_status_poll_interval_seconds : 1.1
+# env_start_expected_seconds : 6.0
+# env_stop_expected_seconds : 13.4
+# Poll cadence during expected transition window and quiet fraction. Defaults: 0.2, 0.7.
+# env_status_poll_dense_seconds : 0.2
+# env_status_poll_quiet_fraction : 0.7
+# WebSocket handshake timeout and retry delays, seconds. Defaults: 5, 2, and 15,45.
+# ws_handshake_timeout_seconds : 5.0
+# reset_retry_delay_seconds : 2.0
+# warmup_retry_delays_seconds : 15,45
+# Heartbeat intervals, retry interval/count, and credential refresh interval.
+# Defaults: 270, 15, 60, 3, and 1200 seconds.
+# heartbeat_interval_seconds : 270
+# heartbeat_ws_ping_interval_seconds : 15
+# heartbeat_retry_interval_seconds : 60
+# heartbeat_max_retries : 3
+# credential_reproject_interval_seconds : 1200
+# Refresh derived credentials after this fraction of their lifetime. Default: 0.8.
+# credential_refresh_fraction : 0.8
+# Background recovery polling interval and concurrent recovery limit. Defaults: 5, 4.
+# supervisor_poll_seconds : 5.0
+# supervisor_max_recoveries : 4
+# Retry policy for throttled service requests. Defaults: 5 retries, 1 second base.
+# throttle_max_retries : 5
+# throttle_backoff_base_seconds : 1.0
+
+[aws]
+# Reuse a browser page across regions. Default: false.
+# reuse_page : false
+# Browser terminal-ready timeout, seconds. Default: 60.
+# ui_wait_timeout : 60
+# Preserve command stderr progress output. Default: false.
+# keep_stderr_progress : false
+# Directory for API debug artifacts. Default: unset.
+# artifact_dir : '/tmp/cloudbasher-artifacts'
+# Log presigned WebSocket host/path (never the signed query). Default: true.
+# log_presign : true
+# Log credential resolution details. Default: true.
+# log_resolution : true
+# Optional endpoint and Cost and Usage Report settings for AWS tabs.
+# Defaults: unset; CUR prefix defaults to empty and region to the session region.
+# eventbridge_ws_url : 'wss://example.execute-api.us-east-1.amazonaws.com/prod'
+# cur_bucket_name : 'example-cur-bucket'
+# cur_report_name : 'example-cur-report'
+# cur_s3_prefix : ''
+# cur_region : 'us-east-1'
+# Billing tab refresh interval, seconds. Default: 900.
+# billing_poll_interval_seconds : 900
+
+[keepalive]
+# Keepalive policy: session|container|native|off. Default: session.
+# policy : 'session'
+# Send periodic shell interaction to keep the session active. Default: true.
+# interaction_ping : true

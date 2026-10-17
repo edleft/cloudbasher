@@ -1,0 +1,427 @@
+CloudBasher Research Source License
+Version 1.0
+Published: 2026-10-16
+
+Copyright (c) 2026 edleft. All rights reserved.
+
+1. Purpose and Status
+
+This license (the "License") governs use of the CloudBasher software and other material
+identified as being provided under this License ("Licensed Material"). The Licensed
+Material is source-available software. This License is not an Open Source Initiative
+approved license and is not intended to qualify the Licensed Material as "open source"
+under the Open Source Definition.
+
+2. Definitions
+
+"Licensor" means edleft (https://github.com/edleft), the copyright holder of the Licensed Material, and
+any successor or assign who makes the Licensed Material available under this
+License. Wherever this License requires separate written permission or
+authorization from the Licensor, it is requested as provided in Section 21.
+
+"Licensee" or "You" means the individual or legal entity exercising rights under this
+License.
+
+"Organization" means the legal entity exercising rights under this License, together
+with its employees and individual contractors acting solely on its behalf and subject
+to confidentiality and use restrictions no less protective than those applicable to
+the Organization. A separately incorporated affiliate is a separate Organization
+unless the Licensor expressly agrees otherwise in writing.
+
+"CloudBasher Code" means source code, scripts, configuration, test code, examples,
+comments, and other software-authored material included in the Licensed Material.
+
+"Documentation" means documentation, explanatory prose, diagrams, examples, and
+project-authored reference material included in the Licensed Material.
+
+"Commercial Cybersecurity Use" means use of the Licensed Material in bona fide
+cybersecurity research, authorized security testing, defensive security engineering,
+security consulting, managed security services, product-security evaluation,
+detection engineering, incident response, red-team, blue-team, or purple-team
+activities, whether or not performed for compensation.
+
+"Commercialization" means selling, sublicensing for a fee, substantially repackaging
+for sale, or making the Licensed Material itself or a substantially derived version
+of it a principal commercial product, paid software offering, or externally available
+hosted service. Commercialization does not include Commercial Cybersecurity Use merely
+because compensation is received for professional services in which the Licensed
+Material is used as a tool.
+
+"AI System" means a computational system that uses machine learning, neural networks,
+foundation models, large language models, generative models, statistical learning, or
+materially similar techniques to infer, generate, classify, predict, transform, or
+produce outputs.
+
+"Model" means model weights, parameters, learned representations, adapters, LoRA
+weights, checkpoints, fine-tuned checkpoints, or materially similar learned artifacts.
+
+"Internal AI System" means an AI System accessible only to the Organization and its
+authorized personnel or contractors, and not distributed, licensed, provided as a
+service, or otherwise made available to any person or entity outside that Organization.
+
+"Externally Available AI System" means an AI System, Model, model artifact, API,
+hosted service, or AI-enabled product made available, directly or indirectly, to any
+person or entity outside the Organization that trained, commissioned, or materially
+improved it. This includes public or private customer services, paid or free APIs,
+customer-only SaaS, downloadable or open weights, partner distributions, licensed
+model artifacts, and publicly released academic or nonprofit models.
+
+"Training" means any process that uses Licensed Material, or material substantially
+derived from Licensed Material, to determine, adjust, optimize, or materially improve
+Model weights, parameters, learned representations, adapters, checkpoints, or model
+behavior. Training includes pre-training, continued pre-training, supervised
+fine-tuning, instruction tuning, reinforcement learning, preference optimization,
+distillation, and materially similar processes.
+
+"AI Training Dataset" means a dataset intentionally assembled or materially prepared
+for Training or material improvement of an AI System.
+
+"Authorized Security Testing" means security testing performed on systems for which
+the person conducting the testing has authorization from the system owner or another
+party legally empowered to grant that authorization.
+
+3. Copyright License Grant
+
+Subject to all terms and conditions of this License, Licensor grants You a worldwide,
+non-exclusive, royalty-free, non-transferable except as expressly permitted by this
+License copyright license to:
+
+a. reproduce and make copies of the Licensed Material;
+b. inspect, analyze, search, index, and perform static or dynamic analysis of the
+   Licensed Material;
+c. execute the Licensed Material for permitted purposes;
+d. modify and create derivative works of the Licensed Material;
+e. create private forks, mirrors, backups, and CI/CD copies;
+f. distribute copies and modified versions as permitted by Section 6; and
+g. exercise the Licensed Material for Commercial Cybersecurity Use.
+
+No rights are granted except those expressly stated or necessarily implied by this
+License.
+
+4. Permitted Uses
+
+Subject to this License, You may use the Licensed Material for:
+
+a. cybersecurity research;
+b. Authorized Security Testing;
+c. red-team, blue-team, and purple-team exercises;
+d. defensive security engineering and detection development;
+e. vulnerability research;
+f. internal enterprise security testing;
+g. internal security-product evaluation;
+h. Commercial Cybersecurity Use;
+i. education, classroom laboratories, CTFs, and academic research;
+j. reproduction and validation of security research;
+k. development of interoperable security tooling;
+l. private or internal AI research, analysis, indexing, retrieval, fine-tuning, and
+   Training consistent with Section 8; and
+m. publication of legitimate research results, including reasonable excerpts of the
+   Licensed Material necessary to explain such research.
+
+5. Commercial Use and Commercialization
+
+5.1 Permitted Commercial Cybersecurity Use.
+Commercial Cybersecurity Use is permitted. The fact that You or Your Organization
+receives compensation does not by itself make an otherwise permitted cybersecurity
+use prohibited.
+
+5.2 Restricted Commercialization.
+Without separate written permission from Licensor, You may not Commercialize the
+Licensed Material. In particular, You may not:
+
+a. sell or license CloudBasher itself or a substantially repackaged or derived version
+   of it as a commercial software product;
+b. offer the Licensed Material or a substantially derived version primarily as a paid
+   hosted service or "CloudBasher-as-a-Service";
+c. make the Licensed Material the principal commercial value of an appliance,
+   subscription, hosted offering, or software product;
+d. remove or replace this License and offer substantially the same Licensed Material
+   under commercial terms that negate the restrictions of this License.
+
+5.3 Consulting and Managed Services.
+Section 5.2 does not prohibit consulting, penetration testing, managed security,
+incident response, training, or other professional services merely because the
+Licensed Material is used as a tool in performing those services, provided the
+customer is not being sold or licensed the Licensed Material itself as the principal
+commercial deliverable.
+
+5.4 Outputs.
+Reports, findings, logs, detection rules, screenshots, benchmarks, and other outputs
+produced through permitted use of the Licensed Material are not subject to the
+Commercialization restriction merely because they were produced using CloudBasher,
+unless they themselves contain a substantial portion of the Licensed Material.
+
+6. Redistribution and Modified Versions
+
+6.1 Redistribution Permission.
+You may redistribute unmodified or modified copies of the Licensed Material, provided
+that each recipient receives:
+
+a. a copy of this License;
+b. all applicable copyright notices;
+c. all required attribution notices;
+d. all applicable third-party notices; and
+e. a clear notice identifying material modifications You made.
+
+6.2 No Removal of Restrictions.
+You may not distribute CloudBasher-derived material under terms that purport to remove,
+waive, or negate restrictions that apply to the CloudBasher-derived portions under
+this License.
+
+6.3 Independent Material.
+This License does not automatically apply to independently developed software merely
+because it interoperates with, invokes, communicates with, or is aggregated with the
+Licensed Material.
+
+6.4 Plugins and Integrations.
+Independently authored plugins, wrappers, clients, or integrations may be licensed
+under terms chosen by their authors unless they incorporate or derive from Licensed
+Material, in which case this License continues to apply to the portions derived from
+Licensed Material.
+
+6.5 No Endorsement.
+Redistribution may not imply sponsorship, certification, or endorsement by Licensor
+without separate written permission.
+
+7. Private and Internal AI Use
+
+7.1 Internal AI Training Permitted.
+You may use Licensed Material for Training, fine-tuning, adaptation, model evaluation,
+embedding generation, semantic indexing, retrieval-augmented generation, and related
+AI research if the resulting AI System remains an Internal AI System and all other
+terms of this License are satisfied.
+
+7.2 Interactive AI Tools.
+You may use an existing AI assistant, coding assistant, or model to analyze, explain,
+debug, document, or modify Licensed Material. You may not knowingly submit a
+substantial amount of Licensed Material to a third-party AI service when You know
+that the service will use that material to Train or materially improve an Externally
+Available AI System in a manner prohibited by Section 8.
+
+7.3 Internal RAG and Embeddings.
+You may create private or internal search indexes, vector databases, embedding stores,
+or retrieval-augmented-generation systems using Licensed Material, provided those
+systems and any substantial CloudBasher-derived corpus remain internal to the
+Organization except as otherwise expressly permitted by this License.
+
+8. Restrictions on Externally Available AI Systems
+
+8.1 External AI Training Restriction.
+Without separate written permission from Licensor, You may not use Licensed Material
+to Train or materially improve an AI System if that AI System is, is intended to be,
+or later becomes an Externally Available AI System.
+
+8.2 Internal-to-External Transition.
+An AI System initially developed as an Internal AI System may not later be made
+Externally Available if Licensed Material was used for its Training or material
+improvement, unless Licensor separately authorizes that external availability in
+writing.
+
+8.3 Training Datasets.
+Without separate written permission from Licensor, You may not intentionally include
+a substantial amount of Licensed Material in an AI Training Dataset intended for
+Training or materially improving an Externally Available AI System, and You may not
+publish, sell, license, or externally distribute such a dataset for that purpose.
+
+8.4 Synthetic Circumvention.
+You may not intentionally transform, paraphrase, transpile, rewrite, summarize, or
+generate synthetic material substantially derived from Licensed Material for the
+purpose of circumventing Sections 8.1 through 8.3.
+
+8.5 Evaluation.
+You may use Licensed Material to benchmark or evaluate an AI System. If evaluation
+results derived from the Licensed Material are then used as a direct training,
+optimization, reinforcement, or preference signal that materially improves an
+Externally Available AI System, that subsequent activity is subject to Section 8.1.
+
+8.6 No Restriction on Ideas.
+Nothing in this Section claims ownership of general ideas, methods, facts,
+cybersecurity concepts, or independently developed material that copyright or other
+applicable law does not protect.
+
+9. Security Authorization and Legal Compliance
+
+9.1 Intellectual-Property Permission Only.
+This License grants intellectual-property permissions only. It does not authorize
+access to, testing of, modification of, interference with, or impairment of any
+third-party computer system.
+
+9.2 Authorization Required.
+You are responsible for obtaining all authorization legally required for Your
+security testing and for complying with applicable law.
+
+9.3 Operational Responsibility.
+You are responsible for the consequences of executing the Licensed Material,
+including changes to cloud resources, identity configuration, data, networking,
+security controls, or other systems.
+
+10. Patent License
+
+Subject to the terms of this License, each Licensor grants You a worldwide,
+non-exclusive, royalty-free patent license under patent claims that the Licensor owns
+or controls and that are necessarily infringed by exercising the copyright permissions
+granted in Section 3 with respect to the Licensed Material as provided by that
+Licensor.
+
+If You institute patent litigation alleging that the Licensed Material, or a
+contribution incorporated into it, infringes a patent, the patent license granted to
+You under this Section terminates as of the date such litigation is filed.
+
+11. Trademarks
+
+This License does not grant permission to use any trade name, trademark, service mark,
+logo, or product branding of Licensor except as reasonably necessary for accurate
+attribution or to identify the unmodified Licensed Material.
+
+12. Third-Party Material
+
+This License applies only to material that Licensor has authority to license under
+these terms. Third-party material identified as subject to another license remains
+governed by that other license. Nothing in this License expands Licensor's rights in
+third-party material.
+
+13. Conditions, Covenants, and Legal Exceptions
+
+13.1 Conditions of License.
+Compliance with Sections 5, 6, 8, 9, and 11 is an express condition of the copyright
+and patent permissions granted by this License to the extent permitted by applicable
+law.
+
+13.2 Contractual Covenants.
+To the extent an enforceable contract is formed by Your acceptance or exercise of
+rights under this License, the obligations in Sections 5, 6, 8, 9, and 11 also
+constitute contractual covenants.
+
+13.3 Exceptions and Limitations.
+Nothing in this License is intended to restrict an act to the extent that applicable
+law allows that act without permission from Licensor and does not permit that freedom
+to be waived or restricted by agreement. The scope and enforceability of this clause
+may vary by jurisdiction.
+
+14. Termination and Cure
+
+14.1 Automatic Termination.
+Your rights under this License terminate automatically if You materially violate this
+License.
+
+14.2 Cure for Non-Willful Breach.
+If the violation was not knowing or willful, Your rights are automatically reinstated
+if You cure the violation within thirty (30) days after You discover it or receive
+written notice of it, whichever occurs first.
+
+14.3 Knowing or Willful Restricted Use.
+For a knowing or willful violation of Section 5.2 or Section 8, rights are not
+automatically reinstated. Reinstatement requires written permission from Licensor.
+
+14.4 Cessation.
+Upon termination, You must cease activities that require permission under this
+License. Termination does not require destruction of independently created material,
+but does not authorize continued distribution, Commercialization, or prohibited AI
+use of Licensed Material.
+
+14.5 Surviving Provisions.
+Sections concerning attribution, restrictions applicable to copies already
+distributed, trademarks, warranty disclaimer, limitation of liability, termination,
+and interpretation survive to the extent necessary to give them effect.
+
+15. Disclaimer of Warranty
+
+THE LICENSED MATERIAL IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY
+KIND, EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE. TO THE MAXIMUM EXTENT PERMITTED BY
+LAW, LICENSOR DISCLAIMS ALL WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, ACCURACY, SECURITY, AND THAT THE LICENSED
+MATERIAL WILL BE ERROR-FREE OR SUITABLE FOR ANY PARTICULAR ENVIRONMENT.
+
+THE LICENSED MATERIAL IS SECURITY RESEARCH SOFTWARE AND MAY CREATE, MODIFY, DELETE,
+EXPOSE, DISRUPT, OR OTHERWISE AFFECT CLOUD RESOURCES, IDENTITIES, DATA, NETWORKS, OR
+SECURITY CONTROLS. YOU ASSUME ALL RISK ARISING FROM ITS USE.
+
+16. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL LICENSOR, CONTRIBUTORS, OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+PUNITIVE, OR CONSEQUENTIAL DAMAGES, OR FOR LOSS OF DATA, PROFITS, REVENUE, GOODWILL,
+BUSINESS, SECURITY, OR AVAILABILITY, ARISING FROM OR RELATED TO THE LICENSED MATERIAL
+OR THIS LICENSE, UNDER ANY THEORY OF LIABILITY, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+WHERE APPLICABLE LAW DOES NOT ALLOW A COMPLETE EXCLUSION OF LIABILITY, THE AGGREGATE
+LIABILITY OF EACH LICENSOR ARISING FROM OR RELATED TO THE LICENSED MATERIAL OR THIS
+LICENSE WILL NOT EXCEED THE GREATER OF ONE HUNDRED U.S. DOLLARS (US $100) OR THE
+AMOUNT YOU PAID THAT LICENSOR SPECIFICALLY FOR THE LICENSED MATERIAL DURING THE
+TWELVE MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.
+
+17. Indemnity
+
+To the extent permitted by applicable law, if You use the Licensed Material in
+violation of Section 9 or Commercialize it in violation of Section 5.2, You agree to
+defend, indemnify, and hold harmless Licensor from third-party claims, damages,
+liabilities, costs, and reasonable attorneys' fees arising directly from that
+unauthorized conduct. This Section does not require indemnification for a Licensor's
+own gross negligence or willful misconduct.
+
+18. Separate Permissions
+
+Uses not granted by this License, including Commercialization and Training or material
+improvement of an Externally Available AI System, may be authorized by Licensor under
+a separate written agreement. A separate permission applies only to the person,
+entity, material, and use expressly identified in that writing.
+
+19. Interpretation and General Terms
+
+19.1 Entire License.
+This License states the complete public licensing terms for the Licensed Material
+unless Licensor provides separate written terms applicable to a specific recipient or
+use.
+
+19.2 Severability.
+If any provision is held unenforceable, it will be reformed only to the minimum extent
+necessary to make it enforceable if permitted by law; otherwise it will be severed,
+and the remaining provisions will remain in effect.
+
+19.3 No Waiver.
+Failure to enforce a provision is not a waiver of that provision or any other
+provision.
+
+19.4 Headings.
+Headings are for convenience and do not limit the meaning of the provisions.
+
+19.5 No Construction Against Drafter.
+To the extent permitted by law, this License will be interpreted according to its
+plain meaning and not against a party merely because that party drafted or proposed
+it.
+
+19.6 Version.
+This is Version 1.0 of the CloudBasher Research Source License. A recipient may rely
+only on the version of the License under which the relevant copy of Licensed Material
+was received unless Licensor expressly offers a later version as an alternative.
+
+20. Required Notice
+
+Any redistribution of Licensed Material must retain the following notice:
+
+CloudBasher is source-available cybersecurity research software.
+Copyright (c) 2026 edleft. Distributed under the CloudBasher Research Source
+License. Commercial cybersecurity use and private/internal AI use are generally
+permitted. Commercialization of CloudBasher itself and use of CloudBasher to train
+or materially improve externally available AI systems require separate written
+authorization from the Licensor, requested at cloudbasher@edleft.org. See the
+LICENSE file for controlling terms.
+
+21. Notices and Contact
+
+Requests for separate written permission or authorization under this License, and any
+other licensing or private correspondence with the Licensor, are made by email to:
+
+    cloudbasher@edleft.org
+
+For matters that are not licensing matters, use the project's public channels on the
+repository rather than this address:
+
+    Bugs, defects and technical problems      Issues
+    Questions and general inquiries           Discussions
+    Security vulnerabilities                  Security -> Advisories ->
+                                              Report a vulnerability
+
+A security vulnerability must not be reported through a public Issue or Discussion.
+See SECURITY.md.

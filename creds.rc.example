@@ -1,0 +1,137 @@
+# Copy to creds.rc; uncomment and fill only the credential blocks you use.
+# One blank-line-separated block is one credential. Keep secrets out of Git;
+# op:// references are supported for any value.
+
+# AWS
+# Console username/password (optional account and MFA settings)
+# csp=aws
+# username=user@example.invalid
+# password=op://vault/aws/password
+# account=123456789012
+# mfa_code=op://vault/aws/one-time password?attribute=otp
+
+# SSO / IAM Identity Center, browser login (omit sso_flow)
+# csp=aws
+# sso_start_url=https://example.awsapps.com/start
+# sso_username=user@example.invalid
+# sso_password=op://vault/aws/sso-password
+# account_id=123456789012
+# role_name=ExamplePermissionSet
+# sso_region=us-east-1
+# sso_mfa_code=op://vault/aws/one-time password?attribute=otp
+# act_as=direct
+
+# SSO / IAM Identity Center, device-code login
+# csp=aws
+# sso_start_url=https://example.awsapps.com/start
+# sso_flow=device
+# account_id=123456789012
+# role_name=ExamplePermissionSet
+# sso_region=us-east-1
+
+# IAM key -> federated-user (AKIA)
+# csp=aws
+# aws_access_key_id=AKIAEXAMPLE00000000
+# aws_secret_access_key=op://vault/aws/secret-access-key
+# act_as=federated
+# federation_name=example-user
+# region=us-west-2
+
+# IAM key -> assumed role (AKIA or ASIA)
+# csp=aws
+# aws_access_key_id=AKIAEXAMPLE00000000
+# aws_secret_access_key=op://vault/aws/secret-access-key
+# act_as=role:arn:aws:iam::123456789012:role/ExampleRole
+# role_session_name=example-session
+
+# Temporary IAM key used directly (ASIA only)
+# csp=aws
+# aws_access_key_id=ASIAEXAMPLE00000000
+# aws_secret_access_key=op://vault/aws/secret-access-key
+# aws_session_token=op://vault/aws/session-token
+# act_as=direct
+
+# Long-term IAM key used without container credential binding (AKIA only)
+# csp=aws
+# aws_access_key_id=AKIAEXAMPLE00000000
+# aws_secret_access_key=op://vault/aws/secret-access-key
+# act_as=direct-unbound
+
+# Azure
+# Console username/password
+# csp=azure
+# username=user@example.invalid
+# password=op://vault/azure/password
+# tenant_id=00000000-0000-0000-0000-000000000000
+# subscription_id=11111111-1111-1111-1111-111111111111
+
+# Service principal with client secret
+# csp=azure
+# tenant_id=00000000-0000-0000-0000-000000000000
+# client_id=11111111-1111-1111-1111-111111111111
+# client_secret=op://vault/azure/client-secret
+# subscription_id=22222222-2222-2222-2222-222222222222
+
+# Service principal with certificate (use certificate_path OR certificate_pem)
+# csp=azure
+# tenant_id=00000000-0000-0000-0000-000000000000
+# client_id=11111111-1111-1111-1111-111111111111
+# certificate_path=~/.azure/example.pem
+# certificate_password=op://vault/azure/certificate-password
+# subscription_id=22222222-2222-2222-2222-222222222222
+
+# OAuth refresh token
+# csp=azure
+# tenant_id=00000000-0000-0000-0000-000000000000
+# refresh_token=op://vault/azure/refresh-token
+# client_id=04b07795-8ddb-461a-bbee-02f9e1bf7b46  # optional; default is Azure CLI
+# subscription_id=22222222-2222-2222-2222-222222222222
+
+# OAuth access token (no refresh path)
+# csp=azure
+# tenant_id=00000000-0000-0000-0000-000000000000
+# access_token=op://vault/azure/access-token
+# subscription_id=22222222-2222-2222-2222-222222222222
+
+# GCP
+# Service account (JSON key fields)
+# csp=gcp
+# type=service_account
+# project_id=example-project
+# client_email=example-sa@example-project.iam.gserviceaccount.com
+# private_key=op://vault/gcp/private-key
+# quota_project_id=example-quota-project
+
+# OAuth authorized user (refresh token)
+# csp=gcp
+# type=authorized_user
+# client_id=example.apps.googleusercontent.com
+# client_secret=op://vault/gcp/client-secret
+# refresh_token=op://vault/gcp/refresh-token
+# project_id=example-project
+# quota_project_id=example-quota-project
+
+# OAuth access token (no refresh path)
+# csp=gcp
+# access_token=op://vault/gcp/access-token
+# email=user@example.invalid
+# project_id=example-project
+# quota_project_id=example-quota-project
+
+# Google browser-session cookies (Console/private API use)
+# csp=gcp
+# SID=op://vault/gcp/SID
+# HSID=op://vault/gcp/HSID
+# SSID=op://vault/gcp/SSID
+# APISID=op://vault/gcp/APISID
+# SAPISID=op://vault/gcp/SAPISID
+# __Secure-1PSID=op://vault/gcp/secure-1psid
+# project_id=example-project
+# quota_project_id=example-quota-project
+
+# Console username/password
+# csp=gcp
+# username=user@example.invalid
+# password=op://vault/gcp/password
+# project_id=example-project
+# quota_project_id=example-quota-project

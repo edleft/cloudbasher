@@ -1,0 +1,55 @@
+# ---------------------------------------------------------------------------
+# CloudBasher runtime artifacts that MUST NOT be committed
+# ---------------------------------------------------------------------------
+# CloudBasher writes these into whatever directory you run it from, and every
+# one of them can carry credential material:
+#
+#   state.bin           encrypted session registry (AES-256-GCM) -- holds
+#                       credentials, session ids and regions
+#   state_<csp>.bin     the same, for --single-node runs
+#   *.rc                credential files you create for -F/--creds-file
+#   cloudbasher.log     the local audit trail. It is written RAW: secret
+#                       masking and demo redaction apply to the terminal, not
+#                       to the log. Treat it as sensitive.
+#
+# The `!*.rc.example` line keeps the shipped templates tracked -- they contain
+# only placeholder values.
+*.rc
+!*.rc.example
+*.bin
+*.bin.bck
+state_*.bin
+*.log
+cloudshell_browser_auth.json
+
+# Terminal recordings capture whatever was on screen, which for this tool
+# includes access key ids, ARNs, account numbers, hostnames and IPs.
+*.cast
+*.mp4
+*.mov
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments. `venv/` is this project's convention (see README);
+# `.venv/` is uv's default and is ignored too so either layout stays clean.
+# `uv sync` also leaves src/*.egg-info behind -- covered above.
+venv/
+.venv/
+
+# ---------------------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------------------
+.DS_Store
+.idea/
+.vscode/
+*.swp
